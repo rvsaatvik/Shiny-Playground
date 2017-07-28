@@ -11,7 +11,7 @@ library(ggplot2)
 library(dplyr)
 library(data.table)
 
-dataset_art <- read_csv("~/shiny_saatvik/data/data_phillips.csv")
+dataset_art <- read_csv("data_phillips.csv")
 
 
 shinyServer(function(input, output) {
@@ -30,9 +30,10 @@ shinyServer(function(input, output) {
                 geom_point()
      })
      
-     # output$table1 <-  renderDataTable({
-     #           dataset_art <- dataset_art[dataset_art$artist == input$artist1,]
-     # 
-     # })
+     output$tbl <-  renderTable({
+          
+          head(dataset_art, n = 10)
+          
+          })
 
 })

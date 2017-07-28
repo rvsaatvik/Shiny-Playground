@@ -24,7 +24,7 @@ shinyUI
                     mainPanel
                     (
                          plotOutput("CompPlot"),
-                    # DT::dataTableOutput("table1")
+                         tableOutput('tbl')
                     )
                 )
           )
